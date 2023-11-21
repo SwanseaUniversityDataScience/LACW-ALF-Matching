@@ -1,0 +1,170 @@
+{
+    "base": {
+        "gp_event_not_used": {
+            "name": "GP_EVENT",
+            "need_cols": []
+        },
+        "gp_event": {
+            "name": "GP_EVENT",
+            "need_cols": []
+        },
+        "gp_alf": {
+            "name": "GP_PATIENT_ALF",
+            "need_cols": []
+        },
+        "gp_reg": {
+            "name": "CLEAN_GP_REG_BY_PRAC",
+            "need_cols": []
+        },
+        "lac_epi": {
+            "name": "LAC_EPISODE"
+        },
+        "lac_main": {
+            "name": "LAC_CHILD"
+        },
+        "lac_alf": {
+            "name": "LAC_PUPIL"
+        },
+        "cin_alf": {
+            "name": "CINW_PUPIL_ALF"
+        },
+        "cin_main": {
+            "name": "CINW_MAIN"
+        },
+        "crcs_alf": {
+            "name": "CRCS_PUPIL_ALF"
+        },
+        "crcs_main": {
+            "name": "CRCSV_MAIN_CRCS"
+        },
+        "wdsd_pers": {
+            "name": "WDSD_AR_PERS"
+        },
+        "wdsd_add": {
+            "name": "WDSD_PER_RESIDENCE_GPREG"
+        },
+        "wdsd_gp": {
+            "name": "WDSD_PER_RESIDENCE_GPREG"
+        },
+        "wdsd_ralf": {
+            "name": "WDSD_GEO_RALF_LSOA2011"
+        },
+        "wdsd_lsoa": {
+            "name": "WDSD_GEO_CHAR_LSOA2011"
+        },
+        "eduw": {
+            "name": "EDUW_PUPIL_ALF"
+        },
+        "cafalf": {
+            "name": "CAFCASS_ALF"
+        },
+        "cafhoa": {
+            "name": "CAFCASS_HEARINGOUTCOMEAPPLICATION"
+        },
+        "cafho": {
+            "name": "CAFCASS_HEARINGOUTCOME"
+        },
+        "cafhear": {
+            "name": "CAFCASS_HEARING"
+        },
+        "cafcase": {
+            "name": "CAFCASS_INCIDENT"
+        },
+        "cafasu": {
+            "name": "CAFCASS_APPLICATIONSERVICEUSERS"
+        },
+        "cafapp": {
+            "name": "CAFCASS_APPLICATION"
+        },
+        "cafapporder": {
+            "name": "CAFCASS_APPLICATIONORDERS"
+        },
+        "cafrel": {
+            "name": ".CAFCASS_RELATIONSHIPS"
+        },
+        "ncchd": {
+            "name": "NCCH_CHILD_BIRTHS"
+        } 
+    },
+    "create": {
+        "lsoa_decode": {
+            "name": ".ZLSOA_LA_YYYYMMDD"
+        },
+        "la_codes": {
+            "name": ".ZLACODES_YYYYMMDD"
+        },
+        "educ_la_decode": {
+            "name": ".ZEDUC_LA_YYYYMMDD"
+        },
+        "mlac_alf": {
+            "name": ".LAC_ALF_DERIVED_YYYYMMDD"
+        },
+        "mlac_epi": {
+            "name": ".ZLAC_EPI_YYYYMMDD"
+        },
+        "mlac_main": {
+            "name": ".ZLAC_MAIN_YYYYMMDD"
+        },
+        "mlac_cepi": {
+            "name": ".ZLAC_CEPI_YYYYMMDD"
+        },
+        "mfp_ref": {
+            "name": ".ZFOSTER_RALF_YYYYMMDD"
+        },
+        "mcin_main": {
+            "name": ".ZCIN_MAIN_YYYYMMDD"
+        },
+        "mcin_alf": {
+            "name": ".ZCIN_ALF_YYYYMMDD"
+        },
+        "mcrcs_main": {
+            "name": ".ZCRCS_MAIN_YYYYMMDD"
+        },
+        "mcrcs_alf": {
+            "name": ".ZCRCS_ALF_YYYYMMDD"
+        },
+        "mlac_map": {
+            "name": ".ZLAC_MAP_YYYYMMDD"
+        },
+        "mlac_malf": {
+            "name": ".ZLAC_MALF_YYYYMMDD"
+        },
+        "mlac_mepi": {
+            "name": ".ZLAC_MEPI_YYYYMMDD"
+        },
+        "mlac_mmain": {
+            "name": ".ZLAC_MMAIN_YYYYMMDD"
+        },
+        "mcafcpar": {
+            "name": ".ZCAFCASS_CHILD_PARENT_YYYYMMDD"
+        },
+        "readcode": {
+            "fullname":  "SAILUKHDV.READ_CD_CV2_SCD",
+            "need_cols": []
+        },
+        "gpev_adoption child": {
+            "name": ".ZGP_EVREF_ADOPTION_CHILD_YYYYMMDD"
+        },
+        "gpev_adoption": {
+            "name": ".ZGP_EVREF_ADOPTION_YYYYMMDD"
+        },
+        "gpev_care": {
+            "name": ".ZGP_EVREF_CARE_YYYYMMDD"
+        },
+        "gpev_narrow care": {
+            "name": ".ZGP_EVREF_NARROW_CARE_YYYYMMDD"
+        },
+        "gpev_pre care": {
+            "name": ".ZGP_EVREF_PRE_CARE_YYYYMMDD"
+        },
+        "gpev_parent of LAC": {
+            "name": ".ZGP_EVREF_PARENT_OF_LAC_YYYYMMDD"
+        },
+        "gpev_foster parent": {
+            "name": ".ZGP_EVREF_FOSTER_PARENT_YYYYMMDD"
+        },
+        "gpev_adoptive parent": {
+            "name": ".ZGP_EVREF_ADOPTIVE_PARENT_YYYYMMDD"
+        }
+    }
+}
