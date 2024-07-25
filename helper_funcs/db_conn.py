@@ -1,12 +1,12 @@
+
+from ibm_db_dbi import OperationalError
+from sqlalchemy import *
+from sqlalchemy import types
+from decimal import Decimal
 import pandas as pd
 import ibm_db as ibm
 import sqlalchemy as db
-from sqlalchemy import *
-from sqlalchemy import types
 import ibm_db_sa
-from decimal import Decimal
-from ibm_db_dbi import OperationalError
-# import helper as s
 
 def set_me_up(username, password):
     global engine
@@ -29,8 +29,8 @@ def call(query):
     if engine:
         ResultProxy = engine.execute(query)
         results = ResultProxy.fetchall()
-        dataframe = pd.DataFrame(results)
-        dataframe.columns = ResultProxy.keys()
+        dataframe = pd.DataFrame(results, columns=ResultProxy.keys())
+        # dataframe.columns = ResultProxy.keys()
         return dataframe
     else:
         return "There's a problem with the connection"
@@ -50,6 +50,11 @@ def test_call(query):
 def call_no_return(query):
     if engine:
         ResultProxy = engine.execute(query)
+
+def call_commit(query):
+    if engine:
+        with engine.begin() as conn:
+            conn.execute(query)
 
 def rename_helper(df):
     df.rename(columns = {0:'TABSCHEMA', 1:'TABNAME', 2:'COLNAME', 3:'COLNO', 4:'TYPESCHEMA', 5:'TYPENAME', 6:'LEN (BYTES)', 7:'SCALE', 8:'TYPESTRINGUNITS', 9:'STRINGUNITSLENGTH', 

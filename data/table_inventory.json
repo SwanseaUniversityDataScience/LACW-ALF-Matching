@@ -1,89 +1,89 @@
 {
     "base": {
         "gp_event_not_used": {
-            "name": "GP_EVENT",
+            "name": "SAILWLGPV.GP_EVENT_CLEANSED",
             "need_cols": []
         },
         "gp_event": {
-            "name": "GP_EVENT",
+            "name": "SAILWLGPV.GP_EVENT_CLEANSED",
             "need_cols": []
         },
         "gp_alf": {
-            "name": "GP_PATIENT_ALF",
+            "name": "SAILWLGPV.PATIENT_ALF_CLEANSED",
             "need_cols": []
         },
         "gp_reg": {
-            "name": "CLEAN_GP_REG_BY_PRAC",
+            "name": "SAILWLGPV.CLEAN_GP_REG_BY_PRAC_INCLNONSAIL_MEDIAN",
             "need_cols": []
         },
         "lac_epi": {
-            "name": "LAC_EPISODE"
+            "name": "SAILLACWV.EPISODE_MAIN"
         },
         "lac_main": {
-            "name": "LAC_CHILD"
+            "name": "SAILLACWV.CHILD_MAIN"
         },
         "lac_alf": {
-            "name": "LAC_PUPIL"
+            "name": "SAILLACWV.PUPIL_ALF"
         },
         "cin_alf": {
-            "name": "CINW_PUPIL_ALF"
+            "name": "SAILCINWV.PUPIL_ALF"
         },
         "cin_main": {
-            "name": "CINW_MAIN"
+            "name": "SAILCINWV.MAIN"
         },
         "crcs_alf": {
-            "name": "CRCS_PUPIL_ALF"
+            "name": "SAILCRCSV.PUPIL_ALF"
         },
         "crcs_main": {
-            "name": "CRCSV_MAIN_CRCS"
+            "name": "SAILCRCSV.MAIN_CRCS"
         },
         "wdsd_pers": {
-            "name": "WDSD_AR_PERS"
+            "name": "SAILX0675V.WDSD_SINGLE_CLEAN_AR_PERS"
         },
         "wdsd_add": {
-            "name": "WDSD_PER_RESIDENCE_GPREG"
+            "name": "SAILWDSDV.PER_RESIDENCE_GPREG"
         },
         "wdsd_gp": {
-            "name": "WDSD_PER_RESIDENCE_GPREG"
+            "name": "SAILWDSDV.PER_RESIDENCE_GPREG"
         },
         "wdsd_ralf": {
-            "name": "WDSD_GEO_RALF_LSOA2011"
+            "name": "SAILX0675V.WDSD_SINGLE_CLEAN_GEO_RALF_LSOA2011"
         },
         "wdsd_lsoa": {
-            "name": "WDSD_GEO_CHAR_LSOA2011"
+            "name": "SAILX0675V.WDSD_SINGLE_CLEAN_GEO_CHAR_LSOA2011"
         },
         "eduw": {
-            "name": "EDUW_PUPIL_ALF"
+            "name": "SAILEDUWV.PUPIL_ALF"
         },
         "cafalf": {
-            "name": "CAFCASS_ALF"
+            "name": "SAILCAFWV.CAFCASS_ALF"
         },
         "cafhoa": {
-            "name": "CAFCASS_HEARINGOUTCOMEAPPLICATION"
+            "name": "SAILCAFWV.CAFCASS_HEARINGOUTCOMEAPPLICATION"
         },
         "cafho": {
-            "name": "CAFCASS_HEARINGOUTCOME"
+            "name": "SAILCAFWV.CAFCASS_HEARINGOUTCOME"
         },
         "cafhear": {
-            "name": "CAFCASS_HEARING"
+            "name": "SAILCAFWV.CAFCASS_HEARING"
         },
         "cafcase": {
-            "name": "CAFCASS_INCIDENT"
+            "name": "SAILCAFWV.CAFCASS_INCIDENT"
         },
         "cafasu": {
-            "name": "CAFCASS_APPLICATIONSERVICEUSERS"
+            "name": "SAILCAFWV.CAFCASS_APPLICATIONSERVICEUSERS"
         },
         "cafapp": {
-            "name": "CAFCASS_APPLICATION"
+            "name": "SAILCAFWV.CAFCASS_APPLICATION"
         },
         "cafapporder": {
-            "name": "CAFCASS_APPLICATIONORDERS"
+            "name": "SAILCAFWV.CAFCASS_APPLICATIONORDERS"
         },
         "cafrel": {
-            "name": ".CAFCASS_RELATIONSHIPS"
+            "name": "SAILCAFWV.CAFCASS_RELATIONSHIPS"
         },
         "ncchd": {
-            "name": "NCCH_CHILD_BIRTHS"
+            "name": "SAILNCCHV.CHILD_BIRTHS"
         } 
     },
     "create": {

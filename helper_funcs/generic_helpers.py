@@ -38,6 +38,13 @@ def get_refreshed_lac_tables(mlac_alf, mlac_main, mlac_epi, la_ref, mlac_cepi=No
     ORDER BY year_code, episode_number
     '''.format(mlac_epi, mlac_alf)
     epidf = al.call(epiq)
+
+    # epidf['episode_end_date'] = epidf['episode_end_date'].apply(
+    #     lambda x: str(x) if str(x) != 'None' else x
+    # )
+    # epidf['episode_end_date'] = epidf['episode_end_date'].replace(
+    #     '9999-12-31', '2099-01-01'
+    # )
     
     maindf['collection_corrected'] = maindf['year_code'].astype(str).str[:2] + maindf['year_code'].astype(str).str[-2:] + '-03-31'
     maindf['collection_corrected'] = dt_type_fix(maindf['collection_corrected'])
@@ -61,6 +68,13 @@ def get_refreshed_lac_tables(mlac_alf, mlac_main, mlac_epi, la_ref, mlac_cepi=No
     ORDER BY episode_start_date'''.format(mlac_cepi)
     cepidf = al.call(cepiq)
 
+    # cepidf['episode_end_date'] = cepidf['episode_end_date'].apply(
+    #     lambda x: str(x) if str(x) != 'None' else x
+    # )
+    # cepidf['episode_end_date'] = cepidf['episode_end_date'].replace(
+    #     '9999-12-31', '2099-01-01'
+    # )
+
     cepidf['wob'] = dt_type_fix(cepidf['wob'])
     cepidf['episode_start_date'] = dt_type_fix(cepidf['episode_start_date'])
     cepidf['episode_end_date'] = dt_type_fix(cepidf['episode_end_date'])
@@ -71,62 +85,5 @@ def get_refreshed_lac_tables(mlac_alf, mlac_main, mlac_epi, la_ref, mlac_cepi=No
     
     return alfdf, maindf, epidf, cepidf
 
-
 def dt_type_fix(series):
     return pd.to_datetime(series).dt.date
-
-
-def get_table_cols(tablename):
-    q = 'SELECT * FROM {0} LIMIT 1'.format(tablename)
-    cols = al.call(q).columns.to_list()
-    return cols
-
-
-def lac_report(mlac_alf, lac_alf):
-    q = '''
-    SELECT COUNT(DISTINCT(unified_id)) AS n
-    FROM {0}
-    WHERE alf_sts_cd != 99
-    '''.format(mlac_alf)
-    numf = al.call(q).iloc[0]['n']
-
-    q = '''
-    SELECT COUNT(DISTINCT(CONCAT(CONCAT(system_id_e, '_'), local_authority_code))) AS n
-    FROM {0}
-    WHERE alf_sts_cd != 99
-    '''.format(lac_alf)
-    numo = al.call(q).iloc[0]['n']
-
-    q = '''
-    SELECT COUNT(DISTINCT(unified_id)) AS n
-    FROM {0}
-    '''.format(mlac_alf)
-    numa = al.call(q).iloc[0]['n']
-
-    print('Total number of ALFs now in LAC: {0}'.format(numf))
-    print('Original number of ALFs: {0}'.format(numo))
-    print('ALFs gained: {0}'.format(numf-numo))
-    print('\n')
-    print('Percentage of dataset now ALFd: {0} %'.format(int((numf / numa) * 100)))
-    print('Original dataset ALF percent: {0} %'.format(int((numo / numa) * 100)))
-    
-def check_table_exists(tablename):
-    thisschema = tablename.split('.')[0]
-    tabname = tablename.split('.')[1]
-    q = '''SELECT COUNT(*) AS n FROM SYSCAT.tables WHERE tabschema = '{0}' AND tabname = '{1}' '''.format(thisschema, tabname)
-    res = al.call(q)['n'].iloc[0]
-    if res > 0:
-        return True
-    return False
-
-
-def get_tb_prov():
-    # Read in the base table provisioning file
-    f = open('./helper_files/table_inventory_complete_val.json')
-    base_tbs = json.load(f)
-    f.close()
-    return base_tbs
-
-
-def dttime_fix(series):
-    return pd.to_datetime(series)
