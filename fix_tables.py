@@ -242,8 +242,8 @@ def _perform_record_linkage(options, mlac_map, mlac_main, all_first, missing_sta
   comparator.exact('reason_episode_started_code', 'reason_episode_started_code', label='reason_episode_started_code')
   comparator.exact('placement_type_code', 'placement_type_code', label='placement_type_code')
   comparator.exact('legal_status_code', 'legal_status_code', label='legal_status_code')
-  comparator.string('lsoa2011_placement_postcode', 'lsoa2011_placement_postcode', threshold=0.5, label='placement_lsoa')
-  comparator.string('lsoa2011_placement_postcode', 'lsoa2011_home_postcode', threshold=0.5, label='home_lsoa')
+  comparator.string('lsoa2011_placement_postcode', 'lsoa2011_placement_postcode', threshold=1, label='placement_lsoa')
+  comparator.string('lsoa2011_placement_postcode', 'lsoa2011_home_postcode', threshold=1, label='home_lsoa')
 
   features = comparator.compute(
     candidate_links,
